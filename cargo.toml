@@ -1,25 +1,27 @@
 [package]
-name = "voting"
+name = "zk-voting-simple"
+version = "0.1.0"
+edition = "2021"
 readme = "README.md"
-version.workspace = true
-description.workspace = true
-homepage.workspace = true
-repository.workspace = true
-documentation.workspace = true
-edition.workspace = true
-license.workspace = true
-
-[lib]
-crate-type = ['rlib', 'cdylib']
-
-[dependencies]
-pbc_contract_common.workspace = true
-pbc_traits.workspace = true
-pbc_lib.workspace = true
-read_write_rpc_derive.workspace = true
-read_write_state_derive.workspace = true
-create_type_spec_derive.workspace = true
-pbc_contract_codegen.workspace = true
 
 [features]
 abi = ["pbc_contract_common/abi", "pbc_contract_codegen/abi", "pbc_traits/abi", "create_type_spec_derive/abi", "pbc_lib/abi"]
+plus_metadata = []
+
+[lib]
+path = "src/contract.rs"
+crate-type = ['rlib', 'cdylib']
+
+[package.metadata.zk]
+zk-compute-path = "src/zk_compute.rs"
+
+[dependencies]
+pbc_contract_common = { git = "https://git@gitlab.com/partisiablockchain/language/contract-sdk.git", tag = "v.16.65.0" }
+pbc_contract_codegen = { git = "https://git@gitlab.com/partisiablockchain/language/contract-sdk.git", tag = "v.16.65.0" }
+pbc_traits = { git = "https://git@gitlab.com/partisiablockchain/language/contract-sdk.git", tag = "v.16.65.0" }
+pbc_lib = { git = "https://git@gitlab.com/partisiablockchain/language/contract-sdk.git", tag = "v.16.65.0" }
+read_write_rpc_derive = { git = "https://git@gitlab.com/partisiablockchain/language/contract-sdk.git", tag = "v.16.65.0" }
+read_write_state_derive = { git = "https://git@gitlab.com/partisiablockchain/language/contract-sdk.git", tag = "v.16.65.0" }
+create_type_spec_derive = { git = "https://git@gitlab.com/partisiablockchain/language/contract-sdk.git", tag = "v.16.65.0" }
+pbc_zk = { git = "https://git@gitlab.com/partisiablockchain/language/contract-sdk.git", tag = "v.16.65.0" }
+# sorted_vec = "x.y.z"
