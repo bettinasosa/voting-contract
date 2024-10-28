@@ -12,6 +12,12 @@ plus_metadata = []
 path = "src/contract.rs"
 crate-type = ['rlib', 'cdylib']
 
+[workspace.metadata.zkcompiler]
+url = "https://gitlab.com/api/v4/groups/12499775/-/packages/maven/com/partisiablockchain/language/zkcompiler/5.21.0/zkcompiler-5.21.0-jar-with-dependencies.jar"
+
+[workspace.metadata.abi-cli]
+url = "https://gitlab.com/api/v4/groups/12499775/-/packages/maven/com/partisiablockchain/language/abi-cli/5.29.0/abi-cli-5.29.0-jar-with-dependencies.jar"
+
 [package.metadata.zk]
 zk-compute-path = "src/zk_compute.rs"
 
